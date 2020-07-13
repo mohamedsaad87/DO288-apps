@@ -1,0 +1,64 @@
+apiVersion: v1
+items:
+- apiVersion: v1
+  kind: Service
+  metadata:
+    annotations:
+      openshift.io/generated-by: OpenShiftNewApp
+    creationTimestamp: "2020-07-13T21:24:27Z"
+    labels:
+      app: quotesapi
+    name: quotesapi
+    namespace: moali87-quotes-dev
+    resourceVersion: "184853318"
+    selfLink: /api/v1/namespaces/moali87-quotes-dev/services/quotesapi
+    uid: 3b6e3b6e-c54f-11ea-b0d4-0291a5e64340
+  spec:
+    clusterIP: 172.30.184.68
+    ports:
+    - name: 8080-tcp
+      port: 8080
+      protocol: TCP
+      targetPort: 8080
+    - name: 8443-tcp
+      port: 8443
+      protocol: TCP
+      targetPort: 8443
+    selector:
+      app: quotesapi
+      deploymentconfig: quotesapi
+    sessionAffinity: None
+    type: ClusterIP
+  status:
+    loadBalancer: {}
+- apiVersion: v1
+  kind: Service
+  metadata:
+    annotations:
+      openshift.io/generated-by: OpenShiftNewApp
+    creationTimestamp: "2020-07-13T21:23:48Z"
+    labels:
+      app: quotesdb
+    name: quotesdb
+    namespace: moali87-quotes-dev
+    resourceVersion: "184852849"
+    selfLink: /api/v1/namespaces/moali87-quotes-dev/services/quotesdb
+    uid: 23d5dec2-c54f-11ea-8d99-068ec670666c
+  spec:
+    clusterIP: 172.30.117.104
+    ports:
+    - name: 3306-tcp
+      port: 3306
+      protocol: TCP
+      targetPort: 3306
+    selector:
+      app: quotesdb
+      deploymentconfig: quotesdb
+    sessionAffinity: None
+    type: ClusterIP
+  status:
+    loadBalancer: {}
+kind: List
+metadata:
+  resourceVersion: ""
+  selfLink: ""

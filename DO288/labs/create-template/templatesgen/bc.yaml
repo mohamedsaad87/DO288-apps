@@ -1,0 +1,55 @@
+apiVersion: v1
+items:
+- apiVersion: build.openshift.io/v1
+  kind: BuildConfig
+  metadata:
+    annotations:
+      openshift.io/generated-by: OpenShiftNewApp
+    creationTimestamp: "2020-07-13T21:24:27Z"
+    labels:
+      app: quotesapi
+    name: quotesapi
+    namespace: moali87-quotes-dev
+    resourceVersion: "184853325"
+    selfLink: /apis/build.openshift.io/v1/namespaces/moali87-quotes-dev/buildconfigs/quotesapi
+    uid: 3b66af87-c54f-11ea-bc92-0a580a800004
+  spec:
+    failedBuildsHistoryLimit: 5
+    nodeSelector: null
+    output:
+      to:
+        kind: ImageStreamTag
+        name: quotesapi:latest
+    postCommit: {}
+    resources: {}
+    runPolicy: Serial
+    source:
+      contextDir: quotes
+      git:
+        uri: https://github.com/mohamedsaad87/DO288-apps
+      type: Git
+    strategy:
+      sourceStrategy:
+        from:
+          kind: ImageStreamTag
+          name: php:7.2
+          namespace: openshift
+      type: Source
+    successfulBuildsHistoryLimit: 5
+    triggers:
+    - github:
+        secret: HT8-NZdVM_30vBQ0rrVj
+      type: GitHub
+    - generic:
+        secret: VFqnC2GSqMtCmRanCA3v
+      type: Generic
+    - type: ConfigChange
+    - imageChange:
+        lastTriggeredImageID: image-registry.openshift-image-registry.svc:5000/openshift/php@sha256:d691584cc4879bf03db936666ae267e482ee9af083a4f94122c172ad82790b8d
+      type: ImageChange
+  status:
+    lastVersion: 1
+kind: List
+metadata:
+  resourceVersion: ""
+  selfLink: ""

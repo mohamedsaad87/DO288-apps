@@ -1,0 +1,37 @@
+apiVersion: v1
+items:
+- apiVersion: v1
+  kind: PersistentVolumeClaim
+  metadata:
+    annotations:
+      pv.kubernetes.io/bind-completed: "yes"
+      pv.kubernetes.io/bound-by-controller: "yes"
+      volume.beta.kubernetes.io/storage-provisioner: kubernetes.io/aws-ebs
+      volume.kubernetes.io/selected-node: ip-10-0-133-130.eu-central-1.compute.internal
+    creationTimestamp: "2020-07-13T21:23:48Z"
+    finalizers:
+    - kubernetes.io/pvc-protection
+    name: quotesdb-claim
+    namespace: moali87-quotes-dev
+    resourceVersion: "184852992"
+    selfLink: /api/v1/namespaces/moali87-quotes-dev/persistentvolumeclaims/quotesdb-claim
+    uid: 23f05b7e-c54f-11ea-b0a8-0a023c95c252
+  spec:
+    accessModes:
+    - ReadWriteOnce
+    resources:
+      requests:
+        storage: 300Mi
+    storageClassName: gp2
+    volumeMode: Filesystem
+    volumeName: pvc-23f05b7e-c54f-11ea-b0a8-0a023c95c252
+  status:
+    accessModes:
+    - ReadWriteOnce
+    capacity:
+      storage: 1Gi
+    phase: Bound
+kind: List
+metadata:
+  resourceVersion: ""
+  selfLink: ""

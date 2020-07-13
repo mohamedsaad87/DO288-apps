@@ -1,0 +1,39 @@
+apiVersion: v1
+items:
+- apiVersion: route.openshift.io/v1
+  kind: Route
+  metadata:
+    annotations:
+      openshift.io/host.generated: "true"
+    creationTimestamp: "2020-07-13T21:27:21Z"
+    labels:
+      app: quotesapi
+    name: quotesapi
+    namespace: moali87-quotes-dev
+    resourceVersion: "184855093"
+    selfLink: /apis/route.openshift.io/v1/namespaces/moali87-quotes-dev/routes/quotesapi
+    uid: a2d9d912-c54f-11ea-a168-0a580a810005
+  spec:
+    host: quotesapi-moali87-quotes-dev.apps.ocp-eu2.prod.nextcle.com
+    port:
+      targetPort: 8080-tcp
+    subdomain: ""
+    to:
+      kind: Service
+      name: quotesapi
+      weight: 100
+    wildcardPolicy: None
+  status:
+    ingress:
+    - conditions:
+      - lastTransitionTime: "2020-07-13T21:27:21Z"
+        status: "True"
+        type: Admitted
+      host: quotesapi-moali87-quotes-dev.apps.ocp-eu2.prod.nextcle.com
+      routerCanonicalHostname: apps.ocp-eu2.prod.nextcle.com
+      routerName: default
+      wildcardPolicy: None
+kind: List
+metadata:
+  resourceVersion: ""
+  selfLink: ""

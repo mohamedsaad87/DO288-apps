@@ -1,0 +1,72 @@
+apiVersion: v1
+items:
+- apiVersion: image.openshift.io/v1
+  kind: ImageStream
+  metadata:
+    annotations:
+      openshift.io/generated-by: OpenShiftNewApp
+    creationTimestamp: "2020-07-13T21:24:27Z"
+    generation: 1
+    labels:
+      app: quotesapi
+    name: quotesapi
+    namespace: moali87-quotes-dev
+    resourceVersion: "184854801"
+    selfLink: /apis/image.openshift.io/v1/namespaces/moali87-quotes-dev/imagestreams/quotesapi
+    uid: 3b62d3de-c54f-11ea-bc92-0a580a800004
+  spec:
+    lookupPolicy:
+      local: false
+  status:
+    dockerImageRepository: image-registry.openshift-image-registry.svc:5000/moali87-quotes-dev/quotesapi
+    publicDockerImageRepository: default-route-openshift-image-registry.apps.ocp-eu2.prod.nextcle.com/moali87-quotes-dev/quotesapi
+    tags:
+    - items:
+      - created: "2020-07-13T21:26:58Z"
+        dockerImageReference: image-registry.openshift-image-registry.svc:5000/moali87-quotes-dev/quotesapi@sha256:6df0f4647a9487149f6ee77c9a5049b473f782124807eabd9d0adea9908cedca
+        generation: 1
+        image: sha256:6df0f4647a9487149f6ee77c9a5049b473f782124807eabd9d0adea9908cedca
+      tag: latest
+- apiVersion: image.openshift.io/v1
+  kind: ImageStream
+  metadata:
+    annotations:
+      openshift.io/image.dockerRepositoryCheck: "2020-07-13T21:23:48Z"
+    creationTimestamp: "2020-07-13T21:23:48Z"
+    generation: 2
+    name: quotesdb
+    namespace: moali87-quotes-dev
+    resourceVersion: "184852854"
+    selfLink: /apis/image.openshift.io/v1/namespaces/moali87-quotes-dev/imagestreams/quotesdb
+    uid: 23ce63d6-c54f-11ea-bc92-0a580a800004
+  spec:
+    lookupPolicy:
+      local: false
+    tags:
+    - annotations: null
+      from:
+        kind: DockerImage
+        name: image-registry.openshift-image-registry.svc:5000/openshift/mysql:5.7
+      generation: 2
+      importPolicy: {}
+      name: "5.7"
+      referencePolicy:
+        type: Source
+  status:
+    dockerImageRepository: image-registry.openshift-image-registry.svc:5000/moali87-quotes-dev/quotesdb
+    publicDockerImageRepository: default-route-openshift-image-registry.apps.ocp-eu2.prod.nextcle.com/moali87-quotes-dev/quotesdb
+    tags:
+    - conditions:
+      - generation: 2
+        lastTransitionTime: "2020-07-13T21:23:48Z"
+        message: 'Internal error occurred: Get https://image-registry.openshift-image-registry.svc:5000/v2/:
+          x509: certificate signed by unknown authority'
+        reason: InternalError
+        status: "False"
+        type: ImportSuccess
+      items: null
+      tag: "5.7"
+kind: List
+metadata:
+  resourceVersion: ""
+  selfLink: ""
